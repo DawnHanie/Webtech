@@ -3,19 +3,549 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
+    <title>Personal Portfolio Website</title>
 </head>
 <body>
-     <h1>MY PERSONAL PAGE</h1>
-    <p>Hanna Nicole G. Macalino</p>
-    <p>Bachelor of Science in Information Technology</p>
-    <h2>About Me</h2>
-    <hr>
-    <p>I am a student interested in web development, video games, anime, mysteries, solving crimes, sports, and martial arts</p>
-    <h2>My Hobbies</h2>
-    <p>I enjoy programming, gaming, and dancing.</p>
-    <hr>
-    <p>That's all, Thank you!</p>
+    <style>
+        /* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+
+/* 1. GENERAL STYLES */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+min-height: 100vh;
+background: linear-gradient(
+145deg,
+#454545 0%,
+#303030 50%,
+#1a1a1a 100%
+);
+background-attachment: fixed;
+color: #ffffff;
+font-family: 'Inter', Arial, sans-serif;
+line-height: 1.6;
+}
+
+h1, h2, h3 {
+font-family: 'Outfit', Arial, sans-serif;
+}
+
+h1 {
+font-size: 36px;
+color: #cccccc;
+}
+
+h2 {
+font-size: 28px;
+color: #dddddd;
+}
+
+p {
+margin-bottom: 15px;
+}
+
+
+/* 2. HEADER */
+
+header,
+.site-header {
+padding: 30px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.site-name {
+font-size: 32px;
+color: #cccccc;
+}
+
+.site-subtitle {
+color: #aaaaaa;
+font-size: 14px;
+}
+
+
+/* 3. NAVIGATION */
+
+nav {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+flex-wrap: wrap;
+gap: 25px;
+
+padding: 20px 5%;
+text-align: right;
+}
+
+/* NAVIGATION INSIDE HEADER */
+
+header nav,
+.site-header nav {
+padding: 0;
+}
+
+/* NAVIGATION LINKS */
+
+nav a {
+display: inline-block;
+color: #bbbbbb;
+font-size: 16px;
+font-weight: 500;
+text-decoration: none;
+
+padding: 8px 5px;
+margin: 0;
+
+background: transparent;
+
+transition:
+color 0.3s ease,
+text-shadow 0.3s ease;
+}
+
+/* GLOW TEXT ON HOVER */
+
+nav a:hover {
+color: #ffffff;
+background: transparent;
+box-shadow: none;
+
+text-shadow:
+0 0 10px rgba(255, 255, 255, 0.8),
+0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+nav a:focus-visible {
+outline: 2px solid #dddddd;
+outline-offset: 4px;
+}
+
+
+/* 4. MAIN CONTENT */
+
+main,
+.container {
+width: 90%;
+max-width: 1150px;
+margin: 40px auto 70px;
+}
+
+
+/* 5. HOME PAGE - ORIGINAL HTML */
+
+body:has(> img[src*="profile.jpg"]) {
+display: grid;
+grid-template-columns: minmax(0, 1fr) 340px;
+grid-template-rows: auto 1fr auto auto;
+column-gap: 40px;
+row-gap: 15px;
+
+min-height: 100vh;
+padding: 35px 5%;
+}
+
+/* NAME */
+
+body:has(> img[src*="profile.jpg"]) > h2 {
+grid-column: 1;
+grid-row: 1;
+
+font-size: 34px;
+font-weight: 800;
+}
+
+/* NAVIGATION */
+
+body:has(> img[src*="profile.jpg"]) > nav {
+grid-column: 2;
+grid-row: 1;
+
+justify-self: end;
+align-self: start;
+
+width: max-content;
+max-width: none;
+padding: 10px 0;
+gap: 15px;
+}
+
+/* HOME HEADING */
+
+body:has(> img[src*="profile.jpg"]) > h1 {
+grid-column: 1;
+grid-row: 2;
+
+align-self: center;
+
+font-size: 48px;
+color: #777777;
+}
+
+/* INTRODUCTION */
+
+body:has(> img[src*="profile.jpg"]) > p:first-of-type {
+grid-column: 1;
+grid-row: 3;
+
+font-size: 28px;
+font-weight: 700;
+}
+
+/* WELCOME MESSAGE */
+
+body:has(> img[src*="profile.jpg"]) > p:nth-of-type(2) {
+grid-column: 1;
+grid-row: 4;
+
+font-size: 18px;
+color: #dddddd;
+}
+
+/* PROFILE IMAGE */
+
+body:has(> img[src*="profile.jpg"]) > img {
+grid-column: 2;
+grid-row: 2 / 5;
+
+width: 300px;
+height: 470px;
+max-width: 100%;
+
+object-fit: cover;
+object-position: center;
+border-radius: 50%;
+
+justify-self: center;
+align-self: center;
+}
+
+
+/* 6. HOME PAGE - SECTION VERSION */
+
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 45px;
+min-height: 550px;
+}
+
+.hero-text {
+flex: 1;
+}
+
+.hero-text h1 {
+font-size: 46px;
+color: #888888;
+margin-bottom: 20px;
+}
+
+.hero-text h2 {
+font-size: 30px;
+color: white;
+}
+
+.hero-text p {
+font-size: 18px;
+}
+
+.profile-photo {
+width: 300px;
+height: 470px;
+max-width: 100%;
+
+object-fit: cover;
+border-radius: 50%;
+}
+
+
+/* 7. CONTENT SECTIONS */
+
+section,
+article,
+.section {
+padding: 35px;
+margin-bottom: 30px;
+
+background: rgba(20, 20, 20, 0.35);
+border: 1px solid #505050;
+border-radius: 12px;
+}
+
+.hero {
+background: transparent;
+border: none;
+}
+
+section h2,
+article h2 {
+margin-bottom: 20px;
+}
+
+
+/* 8. HOBBIES AND INTERESTS */
+
+ul,
+ol {
+padding-left: 25px;
+margin: 15px 0;
+}
+
+li {
+margin-bottom: 10px;
+color: #dddddd;
+}
+
+
+/* 9. SKILLS TABLE */
+
+table {
+width: 100%;
+max-width: 1050px;
+
+margin: 25px auto;
+border-collapse: collapse;
+
+background: #262626;
+}
+
+th,
+td {
+padding: 16px;
+border: 1px solid #606060;
+text-align: left;
+}
+
+th {
+background: #444444;
+color: #ffffff;
+}
+
+td {
+color: #dddddd;
+}
+
+tr:nth-child(even) {
+background: rgba(255, 255, 255, 0.04);
+}
+
+tr:hover {
+background: rgba(255, 255, 255, 0.09);
+}
+
+
+/* 10. CONTACT FORM */
+
+form {
+width: 100%;
+max-width: 650px;
+margin: 30px auto;
+}
+
+/* FORM LABELS */
+
+label {
+display: block;
+margin: 18px 0 8px;
+
+font-weight: 600;
+color: #eeeeee;
+}
+
+/* FORM INPUTS */
+
+input[type="text"],
+input[type="email"],
+textarea {
+display: block;
+
+width: 100%;
+max-width: 100%;
+padding: 14px;
+
+background: #303030;
+color: white;
+
+border: 1px solid #777777;
+border-radius: 8px;
+
+font-family: 'Inter', Arial, sans-serif;
+font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+outline: 2px solid #dddddd;
+outline-offset: 2px;
+}
+
+textarea {
+min-height: 150px;
+resize: vertical;
+}
+
+/* SUBMIT BUTTON */
+
+input[type="submit"] {
+display: block;
+
+margin: 25px auto;
+padding: 14px 35px;
+
+background: #cccccc;
+color: #222222;
+
+border: none;
+border-radius: 8px;
+
+font-weight: 700;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background: #ffffff;
+}
+
+
+/* 11. MULTIMEDIA */
+
+img {
+max-width: 100%;
+}
+
+audio,
+video,
+iframe {
+display: block;
+max-width: 100%;
+margin: 20px 0;
+}
+
+video,
+iframe {
+border-radius: 10px;
+}
+
+
+/* 12. FOOTER */
+
+footer {
+width: 100%;
+padding: 30px 20px;
+
+text-align: center;
+color: #aaaaaa;
+
+background: #191919;
+border-top: 1px solid #505050;
+}
+
+
+/* 13. MOBILE RESPONSIVE */
+
+@media (max-width: 900px) {
+
+header,
+.site-header {
+flex-direction: column;
+align-items: flex-start;
+}
+
+nav {
+justify-content: flex-start;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+body:has(> img[src*="profile.jpg"]) {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+body:has(> img[src*="profile.jpg"]) > nav {
+align-self: flex-start;
+width: auto;
+max-width: 100%;
+flex-wrap: wrap;
+}
+
+body:has(> img[src*="profile.jpg"]) > h1 {
+font-size: 38px;
+}
+
+body:has(> img[src*="profile.jpg"]) > img {
+width: 250px;
+height: 390px;
+
+align-self: center;
+order: 5;
+}
+
+.hero {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.profile-photo {
+width: 250px;
+height: 390px;
+align-self: center;
+}
+}
+
+@media (max-width: 650px) {
+
+nav a {
+font-size: 14px;
+}
+
+main,
+.container {
+width: 94%;
+}
+
+section,
+article,
+.section {
+padding: 22px;
+}
+
+th,
+td {
+padding: 10px;
+font-size: 13px;
+}
+}
+    </style>
+    <!-- LAB ACT 10 -->
+    <h1>HOME</h1>
+    <h2>Hanna Nicole G. Macalino</h2>
+    <img src="images/profile.jpg" alt="Profile photo" width="200" height="350">
+    <p>Hi! i am learning HTML</p>
+    <p>Welcome to my Personal Portfolio Website!</p>
+
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="about.html">ABOUT</a> |
+        <a href="skills.html">SKILLS</a> |
+        <a href="contact.html">CONTACT </a>
+    </nav>
 
 </body>
 </html>
