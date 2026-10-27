@@ -6,6 +6,322 @@
     <title>About</title>
 </head>
 <body>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 5%;
+    background: linear-gradient(
+        145deg,
+        #454545 0%,
+        #303030 50%,
+        #1a1a1a 100%
+    );
+    color: #ffffff;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   HOME PAGE
+   ============================== */
+
+body:has(> img[src*="profile.jpg"]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-rows: auto minmax(260px, 1fr) auto auto;
+    column-gap: 50px;
+    row-gap: 12px;
+    align-content: stretch;
+}
+
+/* NAME */
+body:has(> img[src*="profile.jpg"]) > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 34px;
+    color: #cccccc;
+    font-weight: 800;
+}
+
+/* NAVIGATION */
+body:has(> img[src*="profile.jpg"]) > nav {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+/* HOME HEADING */
+body:has(> img[src*="profile.jpg"]) > h1 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    font-size: clamp(38px, 5vw, 55px);
+    color: #777777;
+    font-weight: 800;
+}
+
+/* INTRODUCTION */
+body:has(> img[src*="profile.jpg"]) > p:first-of-type {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 29px;
+    font-weight: 700;
+    color: white;
+}
+
+/* WELCOME MESSAGE */
+body:has(> img[src*="profile.jpg"]) > p:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 4;
+    font-size: 18px;
+    color: #dddddd;
+}
+
+/* OVAL PROFILE */
+body:has(> img[src*="profile.jpg"]) > img {
+    grid-column: 2;
+    grid-row: 2 / 5;
+    align-self: center;
+    justify-self: center;
+    display: block;
+    width: 300px;
+    height: 470px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: none;
+}
+
+/* NAVIGATION LINKS */
+nav a {
+    display: inline-block;
+    color: #aaaaaa;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* ==============================
+   ABOUT PAGE
+   ============================== */
+
+body > header {
+    max-width: 1050px;
+    margin: 40px auto;
+    padding: 45px;
+    background: rgba(20, 20, 20, 0.35);
+    border: 1px solid #555555;
+    border-radius: 14px;
+}
+
+body > header p:first-child {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #cccccc;
+    margin-bottom: 25px;
+}
+
+body > header p {
+    font-size: 17px;
+    color: #dddddd;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 25px;
+    margin: 15px 0 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #dddddd;
+}
+
+/* ==============================
+   SKILLS PAGE
+   ============================== */
+
+table {
+    width: 100%;
+    max-width: 1050px;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background: rgba(20, 20, 20, 0.5);
+}
+
+th, td {
+    padding: 16px 20px;
+    border: 1px solid #666666;
+    text-align: left;
+}
+
+th {
+    background: #444444;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+td {
+    color: #dddddd;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==============================
+   CONTACT PAGE
+   ============================== */
+
+body:has(> input[type="submit"]) {
+    max-width: 850px;
+    margin: 0 auto;
+    padding-top: 65px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    background: #303030;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #cccccc;
+    outline-offset: 2px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    padding: 13px 30px;
+    background: #cccccc;
+    border: none;
+    border-radius: 8px;
+    color: #222222;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: white;
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+   ============================== */
+
+@media (max-width: 850px) {
+    body:has(> img[src*="profile.jpg"]) {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    body:has(> img[src*="profile.jpg"]) > h2 {
+        font-size: 29px;
+    }
+
+    body:has(> img[src*="profile.jpg"]) > nav {
+        align-self: flex-start;
+        white-space: normal;
+        margin-bottom: 25px;
+    }
+
+    nav a {
+        margin: 0 12px 8px 0;
+    }
+
+    body:has(> img[src*="profile.jpg"]) > h1 {
+        font-size: 40px;
+    }
+
+    body:has(> img[src*="profile.jpg"]) > p:first-of-type {
+        font-size: 24px;
+    }
+
+    body:has(> img[src*="profile.jpg"]) > img {
+        order: 5;
+        width: 250px;
+        height: 380px;
+        align-self: center;
+        margin: 20px 0;
+    }
+
+    body > header {
+        padding: 25px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+    </style>
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="about.html">ABOUT</a> |
+        <a href="skills.html">SKILLS</a> |
+        <a href="contact.html">CONTACT </a>
+    </nav>
     <header>
         <p>Hello Everybody i'm Hanna!</p>
     <p>Bachelor of science in information technology</p>
