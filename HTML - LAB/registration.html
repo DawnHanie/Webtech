@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Student Registration From</h1>
+    <form action="" method="get">
+     <label for="full name">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required minlength="3" maxlength="50">
+    <br>
+    <br>
+    <label for="student id">Student ID:</label>
+    <input type="text" id="studentid" name="studentid" placeholder="Enter student ID" required>
+    <br>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <br>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8" required>
+    <br>
+    <br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday" required>
+    <br>
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="male">Female</label>
+    <br>
+    <br>
+    <label for="program">Program:</label>
+    <select name="program" id="program" required>
+        <option value="">Select Program</option>
+        <option value="BSIT">BSIT</option>
+        <option value="BSCS">BSCS</option>
+        <option value="BMMA">BMMA</option>
+    </select>
+    <br>
+    <br>
+    <label for="hobbies">Hobbies:</label>
+    <input type="checkbox" name="hobbies" id="gaming" value="gaming">
+    <label for="gaming">Gaming</label>
+    <input type="checkbox" name="hobbies" id="coding" value="coding"><label for="coding">Coding</label>
+    <input type="checkbox" name="hobbies" id="sports" value="sports">
+    <label for="sports">Sports</label>
+    <br>
+    <br>
+    <label for="address">Address:</label>
+    <br>
+    <textarea name="address" id="address" rows="3" cols="40"></textarea>
+    <br>
+    <br>
+    <label for="comments">Comments:</label>
+    <br>
+    <textarea name="comments" id="comments" rows="4" cols="40" placeholder="Enter your comments"></textarea>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
