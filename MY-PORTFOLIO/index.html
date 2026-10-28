@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        145deg,
+        #454545 0%,
+        #303030 50%,
+        #1a1a1a 100%
+    );
+
+    background-attachment: fixed;
+
+    color: #ffffff;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #cccccc;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #dddddd;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #eeeeee;
+    margin: 25px 0 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #dddddd;
+}
+
+header {
+    padding: 35px 5% 15px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #cccccc;
+}
+
+nav {
+    padding: 15px 5%;
+    text-align: right;
+    font-size: 0;
+}
+
+header nav {
+    padding: 25px 0 0;
+}
+
+nav a {
+    display: inline-block;
+
+    color: #aaaaaa;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+    margin-left: 25px;
+
+    transition: color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: none;
+    text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+nav a:focus-visible {
+    outline: 2px solid #dddddd;
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+main {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: 45px auto 75px;
+}
+
+main > h1 {
+    margin-bottom: 35px;
+}
+
+section,
+article {
+    scroll-margin-top: 30px;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(460px, 48%);
+
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) > header {
+    grid-column: 1;
+    grid-row: 1;
+
+    align-self: start;
+    padding: 35px 0 15px 5vw;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) > header h1 {
+    font-size: clamp(26px, 2.8vw, 36px);
+    white-space: nowrap;
+}
+
+
+body:has(> main > section > img[src*="profile.jpg"]) > nav {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: start;
+    justify-self: end;
+
+    padding: 45px 5vw 15px 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) > nav a {
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) > main {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    width: 90%;
+    max-width: none;
+
+    margin: 25px auto 60px;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) main > section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(260px, 35%);
+
+    grid-template-rows: 1fr 1fr;
+
+    align-items: center;
+    column-gap: 55px;
+
+    min-height: 580px;
+    padding: 35px 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    margin-bottom: 0;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) main > section > p:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+
+    align-self: center;
+
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 800;
+    line-height: 1.3;
+
+    color: #999999;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) main > section > p:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: center;
+
+    font-size: clamp(20px, 2vw, 27px);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) main > section > img {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    justify-self: center;
+    align-self: center;
+
+    display: block;
+
+    width: 300px;
+    height: 470px;
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+    border: none;
+    margin: 0;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) main > article {
+    margin: 40px auto;
+}
+
+body:has(> main > section > img[src*="profile.jpg"]) > footer {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+main > section,
+main > article {
+    padding: 40px;
+    margin-bottom: 30px;
+
+    background: rgba(20, 20, 20, 0.35);
+
+    border: 1px solid #505050;
+    border-radius: 14px;
+}
+
+main > section h2,
+main > article h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #dddddd;
+
+    margin-bottom: 20px;
+}
+
+main > section p,
+main > article p {
+    font-size: 17px;
+    color: #dddddd;
+}
+
+body:has(main > article > ol) > header h1 {
+    font-size: 40px;
+    color: #cccccc;
+}
+
+main section p {
+    line-height: 1.8;
+}
+
+main ul,
+main ol {
+    padding-left: 28px;
+    margin: 15px 0 25px;
+}
+
+main li {
+    margin-bottom: 10px;
+    color: #dddddd;
+    font-size: 16px;
+}
+
+article ol li {
+    padding: 10px 0 20px;
+}
+
+article ol img {
+    display: block;
+
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    margin: 15px 0;
+
+    border-radius: 12px;
+    border: 1px solid #555555;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+article ol img:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+article > img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    margin: 20px 0;
+
+    border-radius: 12px;
+    border: 1px solid #555555;
+}
+
+main > h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #cccccc;
+}
+
+main section strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #555555;
+    margin: 35px 0;
+}
+
+main section ul li {
+    padding: 3px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background: #262626;
+}
+
+caption {
+    padding: 15px;
+
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #ffffff;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid #606060;
+    padding: 16px;
+    text-align: left;
+}
+
+th {
+    background: #444444;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+td {
+    color: #dddddd;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+article a {
+    color: #dddddd;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    transition: color 0.3s ease;
+}
+
+article a:hover {
+    color: #ffffff;
+}
+
+audio {
+    display: block;
+    max-width: 100%;
+
+    margin: 20px 0;
+}
+
+video {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    margin: 20px 0;
+
+    border-radius: 12px;
+}
+
+iframe {
+    display: block;
+
+    max-width: 100%;
+
+    margin: 20px 0;
+
+    border: none;
+    border-radius: 12px;
+}
+
+form {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+form br {
+    display: none;
+}
+
+form label {
+    display: block;
+
+    margin: 18px 0 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 14px;
+
+    background: #303030;
+    color: #ffffff;
+
+    border: 1px solid #777777;
+    border-radius: 8px;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #dddddd;
+    outline-offset: 2px;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaaaaa;
+}
+
+form input[type="submit"] {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 14px 35px;
+
+    background: #cccccc;
+    color: #222222;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+footer {
+    padding: 35px 20px;
+
+    background: rgba(15, 15, 15, 0.45);
+
+    border-top: 1px solid #505050;
+
+    text-align: center;
+    color: #aaaaaa;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 1050px) {
+    body:has(> main > section > img[src*="profile.jpg"]) {
+        display: block;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) > nav {
+        padding: 15px 5%;
+        text-align: right;
+        white-space: normal;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        column-gap: 30px;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section > img {
+        width: 250px;
+        height: 390px;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 25px 5% 10px;
+    }
+
+    header h1 {
+        font-size: 27px;
+        white-space: normal !important;
+    }
+
+    nav,
+    header nav {
+        padding: 15px 5%;
+        text-align: left;
+        white-space: normal;
+    }
+
+    header nav {
+        padding-left: 0;
+    }
+
+    nav a {
+        margin: 0 15px 10px 0;
+        font-size: 14px;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto 45px;
+    }
+
+    main > section,
+    main > article {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        gap: 20px;
+
+        min-height: auto;
+        padding: 45px 0;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section > p:first-of-type {
+        font-size: 35px;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section > p:nth-of-type(2) {
+        font-size: 20px;
+    }
+
+    body:has(> main > section > img[src*="profile.jpg"]) main > section > img {
+        order: 3;
+
+        width: 240px;
+        height: 360px;
+
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+}
+
+    </style>
+    <header>
+        <h1>My Mini Portfolio Website</h1>
+    </header>
+    <nav>
+        <a href="index.html">HOME</a> |
+        <a href="about.html">ABOUT</a> |
+        <a href="education.html">EDUCATION</a> |
+        <a href="skills.html">SKILLS</a> |
+        <a href="contact.html">CONTACT</a>
+    </nav>
+    <main>
+        <section>
+            <p>Hi! I'm Hanna Nicole Macalino</p>
+            <p>Welcome to my Mini Portfolio Website!</p>
+            <img src="images/profile.jpg" alt="Profile photo" width="200" height="350">
+        </section>
+
+        <article>
+            <h2>My Portfolio Project</h2>
+            <p>This website showcases my personal information, education, skills, and interest.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>My Personal Portfolio | 2026</p>
+    </footer>
+
+</body>
+</html>
