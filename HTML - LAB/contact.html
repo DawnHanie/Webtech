@@ -8,6 +8,245 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 100px;
+
+    background: linear-gradient(145deg, #454545, #303030, #191919);
+    background-attachment: fixed;
+
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+}
+
+body > nav {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    left: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    width: max-content;
+    max-width: 90%;
+
+    margin: 0;
+    padding: 8px 0;
+
+    white-space: nowrap;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    flex-shrink: 0;
+
+    color: #cccccc;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+body > h1,
+body > h2,
+main > h1,
+main > h2 {
+    max-width: 660px;
+    margin: 0 auto 25px;
+
+    font-size: 32px;
+    color: #dddddd;
+    text-align: center;
+}
+
+form {
+    display: block;
+
+    width: 90%;
+    max-width: 660px;
+
+    margin: 20px auto 60px;
+    padding: 0;
+
+    text-align: left;
+}
+
+body > br,
+form br {
+    display: none;
+}
+
+body > label,
+form label {
+    display: block;
+
+    width: 90%;
+    max-width: 660px;
+
+    margin: 18px auto 8px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+body > nav + label,
+form label:first-child {
+    margin-top: 10px;
+}
+
+body > input[type="text"],
+body > input[type="email"],
+body > textarea,
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: block;
+
+    width: 90%;
+    max-width: 660px;
+
+    margin: 0 auto 20px;
+    padding: 14px 15px;
+
+    background: #303030;
+    color: white;
+
+    border: 1px solid #777777;
+    border-radius: 8px;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+}
+
+form label,
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+}
+
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #dddddd;
+    outline-offset: 2px;
+}
+
+body > textarea,
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: #999999;
+}
+
+body > input[type="submit"],
+form input[type="submit"] {
+    display: block;
+
+    margin: 30px auto 60px;
+    padding: 14px 40px;
+
+    background: #cccccc;
+    color: #222222;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+body > input[type="submit"]:hover,
+form input[type="submit"]:hover {
+    background: white;
+}
+
+@media (max-width: 950px) {
+    body > nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding-top: 110px;
+    }
+
+    body > nav {
+        top: 20px;
+        right: 5%;
+        gap: 10px;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    body > label,
+    body > input[type="text"],
+    body > input[type="email"],
+    body > textarea,
+    form {
+        width: 90%;
+    }
+
+    form label,
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        width: 100%;
+    }
+
+    body > h1,
+    body > h2 {
+        font-size: 27px;
+    }
+}
+
     </style>
     
     <nav>

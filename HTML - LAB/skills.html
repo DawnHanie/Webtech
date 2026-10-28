@@ -8,6 +8,193 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 100px;
+
+    background: linear-gradient(145deg, #454545, #303030, #191919);
+    background-attachment: fixed;
+
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+}
+
+
+body > nav {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    left: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    width: max-content;
+    max-width: 90%;
+
+    margin: 0;
+    padding: 8px 0;
+
+    white-space: nowrap;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    flex-shrink: 0;
+
+    color: #cccccc;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+body > table {
+    position: relative;
+
+    width: 90%;
+    max-width: 1050px;
+
+    margin: 80px auto 70px;
+    border-collapse: collapse;
+
+    background: #262626;
+    color: white;
+}
+
+table caption {
+    caption-side: top;
+    padding: 16px;
+
+    background: #444444;
+    border: 1px solid #666666;
+
+    color: white;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+}
+
+table:not(:has(caption)) tr:first-child:has(> th:only-child) {
+    position: absolute;
+    display: block;
+
+    left: 0;
+    right: 0;
+    bottom: calc(100% + 10px);
+}
+
+table:not(:has(caption)) tr:first-child:has(> th:only-child) th {
+    display: block;
+    width: 100%;
+
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: left;
+    background: #444444;
+}
+
+th, td {
+    border: 1px solid #666666;
+
+    padding: 16px;
+    text-align: left;
+    vertical-align: middle;
+
+    font-size: 16px;
+}
+
+th {
+    background: #444444;
+    color: white;
+    font-weight: 700;
+}
+
+td {
+    color: #eeeeee;
+}
+
+tr:nth-child(even) td {
+    background: rgba(255,255,255,0.04);
+}
+
+
+tr:hover td {
+    background: rgba(255,255,255,0.08);
+}
+
+@media (max-width: 950px) {
+    body > nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding-top: 110px;
+    }
+
+    body > nav {
+        top: 20px;
+        right: 5%;
+        gap: 10px;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    body > table {
+        width: 95%;
+        margin-top: 70px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    table caption {
+        font-size: 20px;
+    }
+}
+
     </style>
     
     <nav>

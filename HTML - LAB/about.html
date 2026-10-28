@@ -7,6 +7,182 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 100px;
+
+    background: linear-gradient(145deg, #454545, #303030, #191919);
+    background-attachment: fixed;
+
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+}
+
+body > nav {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    left: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    width: max-content;
+    max-width: 90%;
+
+    margin: 0;
+    padding: 8px 0;
+
+    white-space: nowrap;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    flex-shrink: 0;
+
+    color: #cccccc;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+
+body > header {
+    display: block;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 20px auto 70px;
+    padding: 40px;
+
+    background: rgba(15,15,15,0.3);
+
+    border: 1px solid #555555;
+    border-radius: 14px;
+
+    text-align: left;
+}
+
+body > header > p:first-of-type {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: #dddddd;
+    margin-bottom: 25px;
+}
+
+
+body > header p {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    color: #eeeeee;
+}
+
+body > header ul,
+body > header ol {
+    display: block;
+    width: 100%;
+
+    margin: 10px 0 30px;
+    padding-left: 30px;
+}
+
+body > header li {
+    display: list-item;
+    width: auto;
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    line-height: 1.7;
+    color: #eeeeee;
+}
+
+
+@media (max-width: 950px) {
+    body > nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    body > header {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding-top: 105px;
+    }
+
+    body > nav {
+        top: 20px;
+        right: 5%;
+        gap: 10px;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    body > header {
+        width: 94%;
+        margin: 20px auto 50px;
+        padding: 25px 20px;
+    }
+
+    body > header > p:first-of-type {
+        font-size: 27px;
+    }
+
+    body > header p,
+    body > header li {
+        font-size: 14px;
+    }
+}
+
   </style>
     
     <nav>

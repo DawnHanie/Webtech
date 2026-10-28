@@ -8,7 +8,204 @@
 </head>
 <body>
     <style>
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    grid-template-rows: auto 1fr auto auto auto 1fr;
+
+    column-gap: 50px;
+    row-gap: 12px;
+
+    min-height: 100vh;
+    padding: 35px 5%;
+
+    background: linear-gradient(145deg, #454545, #303030, #191919);
+    background-attachment: fixed;
+
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Outfit', Arial, sans-serif;
+}
+
+body > nav {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    left: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    width: max-content;
+    max-width: 90%;
+
+    margin: 0;
+    padding: 8px 0;
+
+    white-space: nowrap;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    flex-shrink: 0;
+
+    color: #cccccc;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+body > h1 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+
+    font-size: 34px;
+    font-weight: 800;
+    color: #cccccc;
+}
+
+body > h2 {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 800;
+    color: #777777;
+}
+
+body > p:first-of-type {
+    grid-column: 1;
+    grid-row: 4;
+
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+}
+
+body > p:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 5;
+
+    font-size: 17px;
+    color: white;
+}
+
+body > img {
+    grid-column: 2;
+    grid-row: 2 / 7;
+
+    justify-self: end;
+    align-self: center;
+
+    display: block;
+    width: 285px;
+    height: 430px;
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 950px) {
+    body {
+        grid-template-columns: minmax(0, 1fr) 260px;
+        column-gap: 25px;
+    }
+
+    body > img {
+        width: 240px;
+        height: 370px;
+    }
+
+    body > h2 {
+        font-size: 36px;
+    }
+
+    body > nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        padding: 110px 5% 30px;
+    }
+
+    body > nav {
+        top: 20px;
+        right: 5%;
+        gap: 10px;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    body > h1 {
+        font-size: 28px;
+    }
+
+    body > h2 {
+        margin-top: 40px;
+        font-size: 34px;
+    }
+
+    body > p:first-of-type {
+        font-size: 22px;
+    }
+
+    body > p:nth-of-type(2) {
+        font-size: 16px;
+    }
+
+    body > img {
+        align-self: flex-end;
+        width: 220px;
+        height: 340px;
+        margin-top: 25px;
+    }
+}
+
     </style>
     <!-- LAB ACT 10 -->
     <h1>HOME</h1>
