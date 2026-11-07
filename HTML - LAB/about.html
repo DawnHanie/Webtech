@@ -10,7 +10,6 @@
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -44,10 +43,6 @@ p {
     margin-bottom: 15px;
 }
 
-/* ==============================
-   HOME PAGE
-   ============================== */
-
 body:has(> img[src*="profile.jpg"]) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 340px;
@@ -57,7 +52,6 @@ body:has(> img[src*="profile.jpg"]) {
     align-content: stretch;
 }
 
-/* NAME */
 body:has(> img[src*="profile.jpg"]) > h2 {
     grid-column: 1;
     grid-row: 1;
@@ -66,7 +60,6 @@ body:has(> img[src*="profile.jpg"]) > h2 {
     font-weight: 800;
 }
 
-/* NAVIGATION */
 body:has(> img[src*="profile.jpg"]) > nav {
     grid-column: 2;
     grid-row: 1;
@@ -77,7 +70,6 @@ body:has(> img[src*="profile.jpg"]) > nav {
     font-size: 0;
 }
 
-/* HOME HEADING */
 body:has(> img[src*="profile.jpg"]) > h1 {
     grid-column: 1;
     grid-row: 2;
@@ -87,7 +79,6 @@ body:has(> img[src*="profile.jpg"]) > h1 {
     font-weight: 800;
 }
 
-/* INTRODUCTION */
 body:has(> img[src*="profile.jpg"]) > p:first-of-type {
     grid-column: 1;
     grid-row: 3;
@@ -96,7 +87,6 @@ body:has(> img[src*="profile.jpg"]) > p:first-of-type {
     color: white;
 }
 
-/* WELCOME MESSAGE */
 body:has(> img[src*="profile.jpg"]) > p:nth-of-type(2) {
     grid-column: 1;
     grid-row: 4;
@@ -104,7 +94,6 @@ body:has(> img[src*="profile.jpg"]) > p:nth-of-type(2) {
     color: #dddddd;
 }
 
-/* OVAL PROFILE */
 body:has(> img[src*="profile.jpg"]) > img {
     grid-column: 2;
     grid-row: 2 / 5;
@@ -120,7 +109,6 @@ body:has(> img[src*="profile.jpg"]) > img {
     border: none;
 }
 
-/* NAVIGATION LINKS */
 nav a {
     display: inline-block;
     color: #aaaaaa;
@@ -134,10 +122,6 @@ nav a {
 nav a:hover {
     color: white;
 }
-
-/* ==============================
-   ABOUT PAGE
-   ============================== */
 
 body > header {
     max-width: 1050px;
@@ -172,10 +156,6 @@ li {
     color: #dddddd;
 }
 
-/* ==============================
-   SKILLS PAGE
-   ============================== */
-
 table {
     width: 100%;
     max-width: 1050px;
@@ -207,10 +187,6 @@ tr:nth-child(even) {
 tr:hover {
     background: rgba(255, 255, 255, 0.1);
 }
-
-/* ==============================
-   CONTACT PAGE
-   ============================== */
 
 body:has(> input[type="submit"]) {
     max-width: 850px;
@@ -264,10 +240,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: white;
 }
-
-/* ==============================
-   MOBILE RESPONSIVE
-   ============================== */
 
 @media (max-width: 850px) {
     body:has(> img[src*="profile.jpg"]) {
