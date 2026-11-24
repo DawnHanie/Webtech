@@ -1,0 +1,22 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(94, 80, 80);
+    margin: 0;
+}
+
+header {
+    background-color: blueviolet;
+    font: black;
+    padding: 30px;
+}
+
+nav {
+    font: black;
+    transition: 3s ease-in-out;
+}
+
+nav:hover {
+    background: transparent;
+    text-shadow: 0 0 30px 50px rgb(94, 80, 80);
+}
+
